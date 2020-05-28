@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ToDoList_App</string>
+
+    <string-array name="option_edit_delete">
+        <item>Details</item>
+        <item>Edit</item>
+        <item>Delete</item>
+    </string-array>
 </resources>
