@@ -23,6 +23,10 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
+    companion object{
+        var isSortByDateCreated = true
+    }
+
     private lateinit var todoViewModel: TodoViewModel
     private lateinit var todoAdapter: TodoAdapter
 
@@ -252,8 +256,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showDeleteDialog(todo: Todo) {
-        val dialogTitle = "Delete"
-        val dialogMessage = "Are you sure want to delete this data?"
         val toastMessage = "Data has been deleted successfully"
 
         todoViewModel.deleteTodo(todo)
@@ -275,23 +277,24 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
-        when (item.itemId) {
+        return when (item.itemId) {
             R.id.search -> {
                 Toast.makeText(this, "Search...", Toast.LENGTH_SHORT).show()
-                return true
+                true
             }
-
+            R.id.sort -> true
             R.id.sort_by_create -> {
-                Toast.makeText(this, "Sort by created...", Toast.LENGTH_SHORT).show()
-                return true
+                isSortByDateCreated = true
+                observeData()
+                true
             }
             R.id.sort_by_due -> {
-                Toast.makeText(this, "sort by due...", Toast.LENGTH_SHORT).show()
-                return true
+                isSortByDateCreated = false
+                observeData()
+                true
             }
             else -> {
-                return super.onOptionsItemSelected(item)
+                super.onOptionsItemSelected(item)
             }
         }
     }
