@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var todoViewModel: TodoViewModel
     private lateinit var todoAdapter: TodoAdapter
+    private lateinit var alarmReminder: Reminder
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,6 +60,8 @@ class MainActivity : AppCompatActivity() {
         fab_btn.setOnClickListener {
             showInsertDialog()
         }
+
+        alarmReminder = Reminder()
     }
 
     override fun onResume() {
@@ -148,6 +151,9 @@ class MainActivity : AppCompatActivity() {
 
                 todoViewModel.insertTodo(todo)
 
+                if (remindMe) {
+                    alarmReminder.setReminderAlarm(this, dueDate, time,"$title is due in 1 hour")
+                }
                 Toast.makeText(this, toastMessage, Toast.LENGTH_SHORT).show()
             }
         }.show()
@@ -253,6 +259,9 @@ class MainActivity : AppCompatActivity() {
 
                 todoViewModel.updateTodo(todo)
 
+                if (remindMe && prevDueTime!=time) {
+                    alarmReminder.setReminderAlarm(this, dueDate, time,"$title is due in 1 hour")
+                }
                 Toast.makeText(this, toastMessage, Toast.LENGTH_SHORT).show()
             }
         }.show()
