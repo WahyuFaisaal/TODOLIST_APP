@@ -11,13 +11,13 @@
         android:id="@+id/input_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Date"/>
+        android:hint="Date (Tap)"/>
 
     <EditText
         android:id="@+id/input_due"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Due"/>
+        android:hint="Due (Tap)"/>
 
     <EditText
         android:id="@+id/input_title"

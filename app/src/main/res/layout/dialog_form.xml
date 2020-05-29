@@ -34,12 +34,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
+            android:background="@drawable/custom_button"
+            android:backgroundTint="@color/colorAccent"
             android:text="save" />
 
         <Button
             android:id="@+id/btn_cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/custom_button"
+            android:backgroundTint="@color/colorGray"
             android:text="cancel" />
     </RelativeLayout>
 

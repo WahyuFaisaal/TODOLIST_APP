@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ToDoList_App</string>
+    <string name="app_name">TODO LIST</string>
 
     <string-array name="option_edit_delete">
         <item>Details</item>

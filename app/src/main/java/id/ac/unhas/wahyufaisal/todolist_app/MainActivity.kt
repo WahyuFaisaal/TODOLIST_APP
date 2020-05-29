@@ -224,7 +224,7 @@ class MainActivity : AppCompatActivity() {
         view.input_remindme.isChecked = todo.remindMe
 
         val dialogTitle = "Edit data"
-        val toastMessage = "Data has been updated successfully"
+        val toastMessage = "Data has been updated"
         val failAlertMessage = "Please fill all the required fields"
 
         FormDialog(this, dialogTitle, view){
@@ -268,7 +268,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showDeleteDialog(todo: Todo) {
-        val toastMessage = "Data has been deleted successfully"
+        val toastMessage = "Data has been deleted"
 
         todoViewModel.deleteTodo(todo)
         Toast.makeText(this, toastMessage, Toast.LENGTH_SHORT).show()

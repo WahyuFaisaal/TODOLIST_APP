@@ -126,7 +126,7 @@ class TodoAdapter(private val listener: (Todo, Int) -> Unit): RecyclerView.Adapt
 
     class EmptyViewHolder (itemView: View): RecyclerView.ViewHolder(itemView){
         fun bindItem(){
-            itemView.empty_tv.text = "No data found"
+            itemView.empty_tv.text = "List not yet created"
         }
     }
 }
